@@ -97,6 +97,14 @@ impl SessionConfig {
         self
     }
 
+    /// Customize prefetch row group size
+    pub fn with_prefetch(mut self, n: usize) -> Self {
+        // batch size must be greater than zero
+        assert!(n > 0);
+        self.options.execution.parquet.prefetch_size = n;
+        self
+    }
+
     /// Customize [`target_partitions`]
     ///
     /// [`target_partitions`]: datafusion_common::config::ExecutionOptions::target_partitions

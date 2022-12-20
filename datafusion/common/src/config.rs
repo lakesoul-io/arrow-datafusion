@@ -404,6 +404,8 @@ config_namespace! {
         /// data frame.
         pub maximum_buffered_record_batches_per_stream: usize, default = 2
 
+        // set rowgroup size to prefetch asynchronously
+        pub prefetch_size: usize, default = 2
     }
 }
 

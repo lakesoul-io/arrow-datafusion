@@ -29,7 +29,7 @@ rust-version = "1.70"
 readme = "README.md"
 
 [dependencies]
-arrow = "48.0.0"
+arrow = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-48-parquet-bufferred" }
 async-trait = "0.1.41"
 aws-config = "0.55"
 aws-credential-types = "0.55"
