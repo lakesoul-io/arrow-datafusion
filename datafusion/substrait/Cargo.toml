@@ -32,7 +32,7 @@ async-recursion = "1.0"
 chrono = { version = "0.4.23", default-features = false }
 datafusion = { version = "27.0.0", path = "../core" }
 itertools = "0.11"
-object_store = "0.6.1"
+object_store = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-42-parquet-bufferred" }
 prost = "0.11"
 prost-types = "0.11"
 substrait = "0.11.0"
