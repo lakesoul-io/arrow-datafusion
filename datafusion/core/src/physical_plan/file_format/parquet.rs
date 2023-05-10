@@ -376,6 +376,10 @@ impl ExecutionPlan for ParquetExec {
             })?;
 
         let config_options = ctx.session_config().options();
+        let mut prefetch = ctx.session_config().prefetch();
+        if prefetch == 0 {
+            prefetch = 2;
+        }
 
         let opener = ParquetOpener {
             partition_index,
@@ -392,6 +396,7 @@ impl ExecutionPlan for ParquetExec {
             pushdown_filters: self.pushdown_filters(config_options),
             reorder_filters: self.reorder_filters(config_options),
             enable_page_index: self.enable_page_index(config_options),
+            prefetch,
         };
 
         let stream =
@@ -453,6 +458,7 @@ struct ParquetOpener {
     pushdown_filters: bool,
     reorder_filters: bool,
     enable_page_index: bool,
+    prefetch: usize,
 }
 
 impl FileOpener for ParquetOpener {
@@ -484,6 +490,7 @@ impl FileOpener for ParquetOpener {
         let pushdown_filters = self.pushdown_filters;
         let enable_page_index = self.enable_page_index;
         let limit = self.limit;
+        let prefetch = self.prefetch;
 
         Ok(Box::pin(async move {
             let options = ArrowReaderOptions::new().with_page_index(enable_page_index);
@@ -555,6 +562,7 @@ impl FileOpener for ParquetOpener {
                 .with_projection(mask)
                 .with_batch_size(batch_size)
                 .with_row_groups(row_groups)
+                .with_prefetch(prefetch)
                 .build()?;
 
             let adapted = stream

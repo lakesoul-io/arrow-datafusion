@@ -97,6 +97,14 @@ impl SessionConfig {
         self
     }
 
+    /// Set parquet aysnc read prefetch size of row groups
+    pub fn with_prefetch(mut self, n: usize) -> Self {
+        // prefetch size must be greater than zero
+        assert!(n > 0);
+        self.options.execution.parquet.prefetch_size = n;
+        self
+    }
+
     /// Customize [`target_partitions`]
     ///
     /// [`target_partitions`]: datafusion_common::config::ExecutionOptions::target_partitions
@@ -105,6 +113,11 @@ impl SessionConfig {
         assert!(n > 0);
         self.options.execution.target_partitions = n;
         self
+    }
+
+    /// Get parquet async read prefetch size
+    pub fn prefetch(&self) -> usize {
+        self.options.execution.parquet.prefetch_size
     }
 
     /// Get [`target_partitions`]

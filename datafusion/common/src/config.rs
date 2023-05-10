@@ -269,6 +269,9 @@ config_namespace! {
         /// will be reordered heuristically to minimize the cost of evaluation. If false,
         /// the filters are applied in the same order as written in the query
         pub reorder_filters: bool, default = false
+
+        // set rowgroup size to prefetch asynchronously
+        pub prefetch_size: usize, default = 2
     }
 }
 

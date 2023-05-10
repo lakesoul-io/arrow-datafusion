@@ -17,5 +17,19 @@
 # specific language governing permissions and limitations
 # under the License.
 
+<<<<<<< HEAD:datafusion/proto/regen.sh
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR && cargo run --manifest-path gen/Cargo.toml
+=======
+[package]
+name = "parquet-test-utils"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+datafusion = { path = "../datafusion/core" }
+object_store = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
+parquet = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }
+>>>>>>> bff965136 (use customized arrow-rs with parquet async prefetch):parquet-test-utils/Cargo.toml
