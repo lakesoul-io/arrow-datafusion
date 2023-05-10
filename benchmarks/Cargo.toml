@@ -33,14 +33,14 @@ simd = ["datafusion/simd"]
 snmalloc = ["snmalloc-rs"]
 
 [dependencies]
-arrow = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["prettyprint"] }
+arrow = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["prettyprint"] }
 datafusion = { path = "../datafusion/core", version = "17.0.0", features = ["scheduler"] }
 env_logger = "0.10"
 futures = "0.3"
 mimalloc = { version = "0.1", optional = true, default-features = false }
 num_cpus = "1.13.0"
-object_store = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
-parquet = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }
+object_store = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
+parquet = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }
 parquet-test-utils = { path = "../parquet-test-utils/", version = "0.1.0" }
 rand = "0.8.4"
 serde = { version = "1.0.136", features = ["derive"] }

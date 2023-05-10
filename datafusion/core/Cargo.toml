@@ -60,7 +60,7 @@ unicode_expressions = ["datafusion-physical-expr/regex_expressions", "datafusion
 [dependencies]
 ahash = { version = "0.8", default-features = false, features = ["runtime-rng"] }
 apache-avro = { version = "0.14", optional = true }
-arrow = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["prettyprint"] }
+arrow = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["prettyprint"] }
 async-compression = { version = "0.3.14", features = ["bzip2", "gzip", "xz", "futures-io", "tokio"], optional = true }
 async-trait = "0.1.41"
 bytes = "1.1"
@@ -84,10 +84,10 @@ lazy_static = { version = "^1.4.0" }
 log = "^0.4"
 num-traits = { version = "0.2", optional = true }
 num_cpus = "1.13.0"
-object_store = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
+object_store = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
 parking_lot = "0.12"
 futures-util = "0.3"
-parquet = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }
+parquet = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }
 paste = "^1.0"
 percent-encoding = "2.2.0"
 pin-project-lite = "^0.2.7"

@@ -24,5 +24,5 @@ edition = "2021"
 
 [dependencies]
 datafusion = { path = "../datafusion/core" }
-object_store = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
-parquet = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }
+object_store = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
+parquet = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["arrow", "async"] }

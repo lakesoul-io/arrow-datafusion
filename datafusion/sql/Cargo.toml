@@ -37,7 +37,7 @@ default = ["unicode_expressions"]
 unicode_expressions = []
 
 [dependencies]
-arrow-schema = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred" }
+arrow-schema = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred" }
 datafusion-common = { path = "../common", version = "17.0.0" }
 datafusion-expr = { path = "../expr", version = "17.0.0" }
 log = "^0.4"

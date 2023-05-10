@@ -34,8 +34,8 @@ path = "examples/avro_sql.rs"
 required-features = ["datafusion/avro"]
 
 [dev-dependencies]
-arrow = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred" }
-arrow-flight = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred" }
+arrow = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred" }
+arrow-flight = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred" }
 async-trait = "0.1.41"
 datafusion = { path = "../datafusion/core" }
 datafusion-common = { path = "../datafusion/common" }
@@ -44,7 +44,7 @@ datafusion-optimizer = { path = "../datafusion/optimizer" }
 datafusion-sql = { path = "../datafusion/sql" }
 futures = "0.3"
 num_cpus = "1.13.0"
-object_store = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
+object_store = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
 prost = "0.11.0"
 serde = { version = "1.0.136", features = ["derive"] }
 serde_json = "1.0.82"

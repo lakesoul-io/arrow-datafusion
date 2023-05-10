@@ -29,14 +29,14 @@ rust-version = "1.62"
 readme = "README.md"
 
 [dependencies]
-arrow = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["prettyprint"] }
+arrow = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["prettyprint"] }
 async-trait = "0.1.41"
 clap = { version = "3", features = ["derive", "cargo"] }
 datafusion = { path = "../datafusion/core", version = "17.0.0" }
 dirs = "4.0.0"
 env_logger = "0.9"
 mimalloc = { version = "0.1", default-features = false }
-object_store = { git = "https://github.com/meta-soul/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
+object_store = { git = "https://github.com/lakesoul-io/arrow-rs.git", branch = "arrow-rs-31-parquet-bufferred", features = ["aws"] }
 parking_lot = { version = "0.12" }
 rustyline = "10.0"
 tokio = { version = "1.23", features = ["macros", "rt", "rt-multi-thread", "sync", "parking_lot"] }
