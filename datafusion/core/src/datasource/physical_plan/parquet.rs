@@ -373,10 +373,7 @@ impl ExecutionPlan for ParquetExec {
             })?;
 
         let config_options = ctx.session_config().options();
-        let mut prefetch = config_options.execution.parquet.prefetch_size;
-        if prefetch == 0 {
-            prefetch = 2;
-        }
+        let prefetch = config_options.execution.parquet.prefetch_size;
 
         let opener = ParquetOpener {
             partition_index,
